@@ -33,6 +33,8 @@ set nowritebackup
 
 call plug#begin()
 
+Plug 'tpope/vim-fugitive'
+
 " UI / Темы
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -85,8 +87,8 @@ require("toggleterm").setup({
 EOF
 
 " Маппинги (альтернатива через vimscript, но Lua-конфиг выше лучше)
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+nnoremap <silent><leader>t <Cmd>exe v:count1 . "ToggleTerm"<CR>
+inoremap <silent><leader>t <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 
@@ -241,3 +243,10 @@ lua require("noice").setup()
 
 let ayucolor = "dark"
 colorscheme ayu
+
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>l :Lines<CR>
+nnoremap <leader>w :Windows<CR>
+nnoremap <leader>h :History<CR>
+
